@@ -5,6 +5,11 @@ import './packages.scss';
 class Packages extends Component {
 	state = { packages: [] }
 	componentWillMount() {
+		document.title = "Installed Packages";
+		this.loadPackages();
+	}
+
+	loadPackages() {
 		_package.all().then(p => {
 			this.setState({ packages: p })
 		}).catch(err => {
@@ -16,7 +21,8 @@ class Packages extends Component {
 	render() {
 		return (
 			<div className="packages">
-			<table>
+			<div className="packages-header">Total Packages Found: { this.state.packages.length }</div>
+			<table className="packages-data">
 				<thead>
 					<tr>
 						<th width="10%">Name</th>

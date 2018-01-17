@@ -9,8 +9,6 @@ class Container extends Component {
 		return (
 			<div className="container">
 				<Packages />
-
-				<Button rounded>Hello</Button>
 			</div>
 		)
 	}
