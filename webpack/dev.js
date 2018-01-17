@@ -26,7 +26,7 @@ base.module.rules = base.module.rules.concat([
 			loader: 'babel-loader',
 			options: {
 				presets: ['react'],
-				plugins: ['react-hot-loader/babel']
+				plugins: ['transform-object-rest-spread', 'transform-class-properties', 'react-hot-loader/babel']
 			}
 		}]
 	},
