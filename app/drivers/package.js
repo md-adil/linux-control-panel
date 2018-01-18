@@ -1,23 +1,20 @@
-import { exec } from 'child_process';
 import { EOL } from 'os';
+import exec from './execute';
 
 export const all = () => {
-	return new Promise((resolve, reject) => {
-		exec('pacman -Qi', {maxBuffer: 1024 * 1500}, (err, stdout, stderr) => {
-			if(err) {
-				reject(err);
-				return;
-			}
-			if(stderr) {
-				reject(err);
-				return;
-			}
-
-			var _package = buildPackages(stdout);
-			resolve(_package);
-		});
-		
+	return exec(`pacman -Qi | awk '/^Name|^Version|^Installed\ Size|^Install\ Date|^Packager|^\s*$/' | head -n 100`).then(stdout => {
+		return buildPackages(stdout);
 	});
+}
+
+export const show = name => {
+	return exec(`pacman -Qii ${name}`).then(stdout => {
+		return splitPkgInfo(stdout);
+	})
+}
+
+export const remove = name => {
+	return exec(`gksudo "pacman -R ${name}"`);
 }
 
 const buildPackages = stdout => {
