@@ -1,0 +1,16 @@
+@import 'functions';
+
+.ui-list {
+	margin: 0;padding: 5px;list-style: none;
+	display: block;
+}
+
+.ui-list-item {
+	display: block;
+	border-bottom: border();
+	padding: 12px 2px;
+}
+
+.ui-list-item:first-child {
+	border-top: border();
+}

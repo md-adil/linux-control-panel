@@ -1,0 +1,40 @@
+.ui-select {
+    display: inline-block;
+    position: relative;
+    color: #333;
+    text-align: left;
+    > .ui-select-active, > ul > li {
+        cursor: pointer;
+        padding: 10px;
+        display: block;
+    }
+    .ui-select-active {
+        text-align: center;
+        border: 1px solid rgba(0,0,0,.1);
+    }
+    > ul {
+        display: block;
+        z-index: 100;
+        position: absolute;
+        transform: scaleY(0);
+        margin: 0;padding: 0;
+        list-style: none;
+        transform-origin: top;
+        transition: all .1s;
+        border: 1px solid rgba(0,0,0,.1);
+        border-top-width: 0;
+        max-height: 300px;
+        overflow-y: auto;
+        > li {
+            transition: background .3s;
+            &.active,&:hover {
+                background: #38bbcf;
+                color: #fff;
+            }
+        }
+    }
+    &.open > ul {
+        transform: scaleY(1);
+        background: #fff;
+    }
+}

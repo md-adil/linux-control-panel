@@ -1,0 +1,19 @@
+.ui-confirm {
+    .ui-modal-dialog {
+        max-width: 390px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    .ui-confirm-title {
+        font-weight: 400;
+    }
+    .ui-confirm-subtitle {
+        font-weight: 300;
+    }
+    .ui-confirm-actions {
+        font-weight: 300;
+        margin-top: 20px;
+    }
+    .ui-modal-wraper {
+        background: rgba(0, 0, 1, 0.11);
+    }
+}

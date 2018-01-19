@@ -1,0 +1,6 @@
+.panel {
+  border-radius: 0;
+  &.panel-default > .panel-heading {
+    background-color: #fbfbfb;
+  }
+}

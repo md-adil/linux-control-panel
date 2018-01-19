@@ -1,0 +1,23 @@
+.ui-tagsinput {
+    &-tags {
+        display: inline-block;
+    }
+    &-tag {
+        &:first-child {
+            margin-left: 0;
+        }
+        display: inline-block;
+        margin: 2px;
+        padding: 5px;
+        border-radius: 3px;
+        font-size: .8em;
+        background: #E1E1E1;
+        text-align: center;
+        color: #555;
+    }
+    .ui-close-mini {
+        float: none;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}

@@ -3,10 +3,24 @@ import './button.scss';
 import classname from 'classname';
 
 class Button extends Component {
+	colors = {
+		'default': 'color-1',
+		'primary': 'color-2',
+		'warning': 'color-3',
+		'danger': 'color-4',
+	}
+
+	static defaultProps = {
+		type: 'default'
+	}
+
+
 	render() {
-		const { children, type, rounded, ...props } = this.props;
+		const { children, type, round, border, ...props } = this.props;
+
+
 		return <button { ...props }
-			className={ classname({ rounded: rounded }) }
+			className={ classname('btn', this.colors[type], { 'btn-round': round, 'btn-border': border }) }
 		>{ children }</button>
 	}
 }

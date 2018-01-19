@@ -1,0 +1,70 @@
+.notificaiton-toast {
+	.notification {
+		position: relative;
+		border-radius: 3px;
+		padding: 15px;
+		padding-right: 35px;
+		color: #f1f1f1;
+		background: #222;
+		margin: 10px 0;
+		display: block;
+		box-shadow: 1px 1px 5px rgba(0,0,0,.3);
+		font-weight: 300;
+		min-width: 200px;
+		max-width: 300px;
+		.notification-title {
+			margin: 0;
+			font-weight: 400;
+			font-size: 1.2em;
+		}
+		.notification-body {
+			margin-top: 10px;
+		}
+	}
+
+	.notification-close {
+		position: absolute;
+		top: 5px;
+		right: 10px;
+		font-weight: 500;
+		opacity: .8;
+		cursor: pointer;
+		color: #fff;
+		text-decoration: none;
+		font-size: 1.5em;
+		line-height: 1;
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	position: fixed;
+	left: 10px;
+	bottom: 10px;
+	max-height: calc(100% - 20px);
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 100001;
+}
+
+.ui-notification-enter {
+	animation: animation-ui-notification .3s ease-out;
+}
+
+.ui-notification-exit {
+	animation: animation-ui-notification .3s ease-out reverse;
+}
+
+@keyframes animation-ui-notification {
+    0% {
+        transform: translate(-100%);
+    }
+
+    75% {
+        transform: translate(10%);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}

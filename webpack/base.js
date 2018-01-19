@@ -8,7 +8,27 @@ module.exports = {
 	},
 	target: 'electron-renderer',
 	module: {
-		rules: []
+		rules: [
+			{
+				test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+	       		use: [{
+		           loader: 'file-loader',
+		           options: {
+		             name: '[name].[ext]',
+		             outputPath: 'fonts/',    // where the fonts will go
+		           }
+		        }]
+			}, {
+				test: /\.jpe?g|\.png$/,
+	       		use: [{
+		           loader: 'file-loader',
+		           options: {
+		             name: '[name].[ext]',
+		             outputPath: 'images/',    // where the fonts will go
+		           }
+		        }]
+			}
+		]
 	},
 	plugins: []
 }

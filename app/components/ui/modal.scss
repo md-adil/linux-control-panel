@@ -1,0 +1,93 @@
+@import 'functions';
+
+.ui {
+	&-modal {
+		&-wraper {
+		    position: fixed;
+		    top: 0;
+		    bottom: 0;
+		    right: 0;
+		    left: 0;
+		    background: rgba(241, 241, 241, 0.94);
+		    z-index: 100000;
+			transition: all .3s ease-in-out;
+			overflow: auto;
+		}
+		&-dialog {
+			position: relative;
+			background: #fefefe;
+		    border: 1px solid #d2d2d2;
+		    width: 100%;
+		    max-width: 750px;
+		    // max-height: calc(100% - 200px);
+		    margin: 100px auto;
+		    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.16);
+			transition: all .3s ease-out;
+		}
+		&-body, &-header, &-footer {
+			padding: 15px;
+		}
+
+		&-header {
+			border-bottom: border();
+			font-size: 1.2em;
+			background: #fbfbfb;
+		}
+
+		&-footer {
+			border-top: border();
+		}
+
+	}
+
+
+	&-close {
+		position: absolute;
+		color: #aaa;
+		cursor: pointer;
+		text-decoration: none;
+		font-size: 1.5em;
+		&:hover {
+			text-decoration: none;
+		}
+		line-height: 1;
+		right: 10px;
+		top: 10px;
+		height: 30px;line-height: 30px;width: 30px;
+		border-radius: 0;
+		transition: all .3s;
+		text-align: center;
+		&:hover {
+			background: rgba(0, 0, 0, 0.15);
+			border-radius: 50%;
+		}
+	}
+}
+
+.ui-modal-enter {
+	opacity: 0;	
+	.ui-modal-dialog {
+		transform: scale(0.2);
+	}
+}
+
+.ui-modal-enter-active {
+	opacity: 1;	
+	.ui-modal-dialog {
+		transform: scale(1);
+	}
+}
+
+.ui-modal-exit {
+	opacity: 1;	
+	.ui-modal-dialog {
+		transform: scale(1);
+	}
+}
+
+.ui-modal-exit-active {
+	opacity: 0;
+	.ui-modal-dialog {
+		transform: scale(0.2);
+	}
+}

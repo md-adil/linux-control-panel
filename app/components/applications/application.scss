@@ -1,0 +1,27 @@
+.applications {
+	display: flex;
+	flex-wrap: wrap;
+	.application {
+		flex: 0 0 20%;
+		display: flex;
+		font-size: 1.5em;
+		.icon {
+			background-image: url(../media/apps.png);
+			width: 147px;
+			height: 147px;
+		}
+	}
+	.application:nth-child(1) .icon {
+		background-position: -25px -22px; 
+	}.application:nth-child(2) .icon {
+		background-position: -226px -20px;
+	}.application:nth-child(3) .icon {
+		background-position: -427px -23px; 
+	}.application:nth-child(4) .icon {
+		background-position: -27px -208px; 
+	}.application:nth-child(5) .icon {
+		background-position: -226px -207px; 
+	}.application:nth-child(6) .icon {
+		background-position:  -428px -210px;
+	}
+}

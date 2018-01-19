@@ -12,6 +12,7 @@ class Index extends Component {
 	}
 
 	loadPackages() {
+		return;
 		_package.all().then(p => {
 			this.setState({ packages: p })
 		}).catch(err => {

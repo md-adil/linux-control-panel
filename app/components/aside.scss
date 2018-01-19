@@ -1,5 +1,24 @@
+@import 'variables.scss';
+nav ul {
+	list-style: none;
+	margin: 0;padding: 0;
+}
 aside {
-	background: #9e9e9e;
-	flex-basis: 100px;
-	min-width: 100px;
+	background: #283544;
+	flex: 0 0 150px;
+	ul {
+		margin-top: 30px;
+		li a {
+			font-size: 1.2em;
+			font-weight: thin;
+			color: #fff;
+			text-decoration: none;
+			width: 100%;
+			display: block;
+			padding: 10px;
+			&:hover {
+				background: $color2;
+			}
+		}
+	}
 }
