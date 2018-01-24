@@ -2,7 +2,7 @@ import { EOL } from 'os';
 import exec from './execute';
 
 export const all = () => {
-	return exec(`pacman -Qi | awk '/^Name|^Version|^Installed\ Size|^Install\ Date|^Packager|^\s*$/' | head -n 100`).then(stdout => {
+	return exec(`pacman -Qi | awk '/^Name|^Version|^Installed\ Size|^Install\ Date|^Packager|^\s*$/'`).then(stdout => {
 		return buildPackages(stdout);
 	});
 }
